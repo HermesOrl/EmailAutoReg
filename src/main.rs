@@ -148,8 +148,8 @@ async fn main() {
     let proxy_manager = Arc::new(Mutex::new(ProxyManager::new(proxies)));
     let file_writer = Arc::new(FileWriter::new("FREE_EMAILS.txt").expect("Failed to open file for writing"));
 
-    let num_jobs = 10;
-    let max_concurrent_tasks = 300;
+    let num_jobs = 40000;
+    let max_concurrent_tasks = 1000;
     let semaphore = Arc::new(Semaphore::new(max_concurrent_tasks));
 
     let num_workers = num_jobs / 10;
