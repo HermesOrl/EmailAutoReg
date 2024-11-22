@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-auto-reg
+  labels:
+    role: email-auto-reg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-auto-reg
+  template:
+    metadata:
+      name: email-auto-reg
+      labels:
+        app: email-auto-reg
+    spec:
+      containers:
+        - name: email-auto-reg
+          image: hermesorl/email_auto_reg
+      restartPolicy: Always
